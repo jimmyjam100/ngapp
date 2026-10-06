@@ -52,12 +52,11 @@ jobs:
           git checkout $latestTag
           cd ..
 
-      - name: Checkout neuroglancer (specific tag / branch /  commit)
-        if: ${{ inputs.neuroglancer != 'stable' }}
+      - name: Checkout my Neuroglancer fork
         uses: actions/checkout@v4
         with:
-          repository: google/neuroglancer
-          ref: ${{ inputs.neuroglancer }}
+          repository: jimmyjam100/neuroglancer
+          ref: zarr_vectors_working
           fetch-depth: 0
           path: neuroglancer
           
